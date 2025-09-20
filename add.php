@@ -122,3 +122,4 @@ if (isset($_POST['add_notices'])) {
 // Close the connection
 mysqli_close($conn);
 
+

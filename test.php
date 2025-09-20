@@ -9,5 +9,4 @@
                 }
                 $sql = "SELECT * FROM Owners";
                 $result = mysqli_query($conn, $sql);
-
 ?>

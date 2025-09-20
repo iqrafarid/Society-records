@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .content-container {
+            display: none; /* Hidden by default */
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-container p {
+            margin: 0;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Society Records</h1>
+
+    <div class="button-container">
+        <button class="button" onclick="showContent('meeting')">Meetings</button>
+        <button class="button" onclick="showContent('owners')">Apartment Owners</button>
+        <button class="button" onclick="showContent('notices')">Tenants</button>
+        <button class="button" onclick="showContent('funds')">Funds</button> 
+    </div>
+
+    <div id="meeting" class="content-container">
+        <h2>Meetings</h2>
+        <p>Details of society meetings will be displayed here.</p>
+    </div>
+
+    <div id="owners" class="content-container">
+        <h2>Apartment Owners</h2>
+        <p>Information about apartment owners will be displayed here.</p>
+    </div>
+
+    <div id="tenants" class="content-container">
+        <h2>Tenants</h2>
+        <p>Details of tenants in the society will be displayed here.</p>
+    </div>
+
+    <div id="funds" class="content-container">
+        <h2>Funds</h2>
+        <p>Funds for the society members will be displayed here.</p>
+    </div>
+
+    
+    <div id="Notices" class="content-container">
+        <h2>notices</h2>
+        <p>Notices of the society will be displayed here.</p>
+    </div>
+    
+    <script>
+        function showContent(id) {
+            // Hide all content containers
+            const contents = document.querySelectorAll('.content-container');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Show the selected content container
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

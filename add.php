@@ -1,7 +1,7 @@
 <?php
 $hostName = "localhost"; 
 $dbUser = "root";
-$dbPass = "F@123iqr"; // Database password
+$dbPass = "F@123iqr1211"; // Database password
 $dbName = "societyrecords"; // Database name
 $conn = mysqli_connect($hostName, $dbUser, $dbPass, $dbName);
 
@@ -121,3 +121,4 @@ if (isset($_POST['add_notices'])) {
 
 // Close the connection
 mysqli_close($conn);
+

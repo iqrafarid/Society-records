@@ -23,5 +23,4 @@ if (isset($_POST['delete'])) {
         // Handle error
         echo "Error deleting record: " . mysqli_error($conn);
     }
-
 }

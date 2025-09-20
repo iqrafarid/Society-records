@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Records</title>
+    <link rel="stylesheet" href="http://localhost:80/sr/home.css"> <!-- CSS file link -->
+</head>
+<body>
+
+    <h1>Society Records</h1>
+
+    <div class="button-container">
+        <button class="button" onclick="showContent('home')">Home</button>
+        <button class="button" onclick="showContent('notices')">Notices</button>
+        <a href="login.html">
+            <button class="button">Login</button>
+        </a>
+    </div>
+    
+    <div id="home" class="content-container" style="display: block">
+        <!-- Home content goes here -->
+        <p>Welcome to the Society Records home page.</p>
+    </div>
+
+    <div id="notices" class="content-container" style="display: none">
+        <h2>Notices</h2>
+        <div class="preview-section" id="preview"></div>
+    </div>
+
+    <script>
+        // Fetch the PHP file to get the notices
+        fetch('http://localhost:80/sr/home2.php')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.text();
+    })
+    .then(data => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+
+        const specificSection = tempDiv.querySelector('#section-to-fetch');
+        if (specificSection) {
+            document.getElementById('preview').innerHTML = specificSection.innerHTML; // Populate the preview section
+        } else {
+            document.getElementById('preview').innerHTML = 'No notices available.';
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching the PHP file:', error);
+        document.getElementById('preview').innerHTML = 'Error loading notices.';
+    });
+
+        function showContent(id) {
+            // Hide all content containers
+            const contents = document.querySelectorAll('.content-container');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Show the selected content container
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

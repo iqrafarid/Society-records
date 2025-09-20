@@ -1,8 +1,8 @@
 <?php
 $hostName = "localhost"; 
 $dbUser = "root";
-$dbPass = "F@iqr123";    // MySQL server username
-$dbName = " Society_records";       // Database name
+$dbPass = "F@123iqr1211";    // MySQL server username
+$dbName = " societyrecords";       // Database name
 $conn = mysqli_connect($hostName, $dbUser, $dbPass, $dbName);
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
@@ -18,4 +18,5 @@ if (isset($_POST['delete'])) {
         // Handle error
         echo "Error deleting record: " . mysqli_error($conn);
     }
+
 }

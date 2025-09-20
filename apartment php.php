@@ -1,10 +1,10 @@
 <?php
 $host = "localhost";
 $username = "root";
-$password = "F@123iqr";
-$dbname = "ssrr";
+$password = "F@123iqr1211";
+$dbname = "societyrecords";
 
-$conn = new mysqli($localhost, $root, $F@123iqr, $ssrr);
+$conn = new mysqli($localhost, $root, $F@123iqr1211, $societyrecords);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -86,5 +86,6 @@ if (!$result) {
             </div>
         </div>
     </div>
+
 
 

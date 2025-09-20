@@ -1,7 +1,7 @@
 <?php
     $hostName = "localhost"; 
     $dbUser = "root";
-    $dbPass = "F@123iqr";    //mysql server username
+    $dbPass = "F@123iqr1211r";    //mysql server username
     $dbName = "societyrecords";       //database name
     $conn = mysqli_connect($hostName, $dbUser, $dbPass, $dbName);
 
@@ -87,4 +87,5 @@
        <input type="submit" name="update" value="Update">
     </form>
 </body>
+
 </html>
